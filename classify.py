@@ -1,21 +1,21 @@
 """
-Write code to classify the given PDF into a know PDF format or type
+Module Name: Classify Module 
+Module Type: Sub Module to Main Module
+Description: The current python module indentifies the PDF format i.e image type or static form type and returns the PDF type.
+Functionality: The current module checks for the presence of PDF form fields, in the presence of form fields it is classified as static form type else image type.
+Dependencies: <>
+Additional Details: <>
+Input Parameters: PDF file name including the path.
+Version History: <Date MMDDYYYY>   <Name>             <Change Description>
+                  06062017         Praneeth K         Initial Version
 """
 from collections import OrderedDict
 from PyPDF2 import PdfFileWriter, PdfFileReader
-import pprint
 import logging
-
+#   Below is API interface to PyPDF2 which extracts the PDF form fields and returns the form fields
 
 def _getFields(obj, tree = None, retval = None, fileobj = None):
-    fieldAttributes = {'/FT': 'Field Type',
-                       '/Parent': 'Parent',
-                       '/T': 'Field Name',
-                       '/TU': 'Alternate Field Name',
-                       '/TM': 'Mapping Name',
-                       '/Ff': 'Field Flags',
-                       '/V': 'Value',
-                       '/DV': 'Default Value'}
+    fieldAttributes = {'/FT': 'Field Type'}
     if retval is None:
         #retval is an Ordered dictionary.
         retval = OrderedDict()
@@ -44,16 +44,13 @@ def _getFields(obj, tree = None, retval = None, fileobj = None):
             obj._buildField(field, retval, fileobj, fieldAttributes)
     return retval
 
-
-def get_form_fields(infile):
-    infile = PdfFileReader(open(infile, 'rb'))
-    #build the tree with
-    fields = _getFields(infile)
-    return fields 
+#   _getFields returns the fields if present, which are stored in the variable 'fields'.
+#   The PDF type is returned to '__init__', return table type (image type) if the variable is empty otherwise return textbox type (static form).
         
 def pdf_type(pdf_file_name):
-    result = get_form_fields(pdf_file_name)
-    if result is None:
+    file_content = PdfFileReader(open(pdf_file_name, 'rb'))
+    fields = _getFields(file_Content)
+    if fields is None:
         return 'table'
     else:
         return 'textbox'

@@ -1,6 +1,9 @@
 #The location at which the PDF files are stored
 pdf_path = ''
 
+#The location at which the schema/meatdata of the two PDF formats is stored
+schema_path = ''
+
 #The locationa at which the output CSV files are stored
 csv_table_path = ''
 csv_textbox_path = ''
