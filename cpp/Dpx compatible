@@ -1,0 +1,19 @@
+{
+  "Locale1": {
+    "WEBLAB_1": [
+      "metric1",
+      "metric2"
+    ]
+  },
+  "Locale2": {
+    "WEBLAB_1": [
+      "metric1",
+      "metric2"
+    ],
+    "WEBLAB_23": [
+      "metric1",
+      "metric3",
+      "metric4"
+    ]
+  }
+}

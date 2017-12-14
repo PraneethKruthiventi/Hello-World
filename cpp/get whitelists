@@ -1,0 +1,32 @@
+[
+  {
+    "statusOfWhitelist": "Active",
+    "weblab": "WEBLAB_1",
+    "metricsList": [
+      "metric1",
+      "metric2"
+    ],
+    "marketplaces": [
+      "Locale1",
+      "Locale2"
+    ],
+    "time": "2017-12-06T04:43:00Z",
+    "id": "f232f194-fb9f-49a0-b766-79f577648dad",
+    "userId": "prakrup"
+  },
+  {
+    "statusOfWhitelist": "Active",
+    "weblab": "WEBLAB_23",
+    "metricsList": [,
+      "metric1",
+      "metric3",
+      "metric4"
+    ],
+    "marketplaces": [
+      "Locale2"
+    ],
+    "time": "2017-12-01T10:00:12Z",
+    "id": "15ba7772-46df-48cf-b502-ba698ea55c07",
+    "userId": "prakrup"
+  }
+]
